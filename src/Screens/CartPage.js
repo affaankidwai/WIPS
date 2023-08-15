@@ -786,7 +786,7 @@ const styles = StyleSheet.create({
   },
   orderInfoContainer: {
     padding: 16,
-    backgroundColor: "#F0F0F3",
+    backgroundColor: "#F9F5F6",
     marginTop: 16,
     borderRadius: 12,
   },
@@ -821,7 +821,7 @@ const styles = StyleSheet.create({
   },
   paymentMethodContainer: {
     padding: 16,
-    backgroundColor: "#F0F0F3",
+    backgroundColor: "#F9F5F6",
     marginTop: 16,
     borderRadius: 12,
   },

@@ -3,24 +3,34 @@ import React from "react";
 import ProductItem from "../Components/ProductCard";
 import SearchBar from "../Components/SearchBar";
 import ProductIcon from "../Components/ProductIcon";
+import { products } from "../Components/ProductCard";
+import CarouselComponent from "../Components/CarouselComponent";
+import ProductCarousel from "../Components/ProductCarousel";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.heading}>Welcome Back, Affaan</Text>
       <SearchBar />
-      <Text style={styles.topTitle}>Top Products near you</Text>
+      <Text style={styles.topTitle}>Hot Selling</Text>
+      <ProductCarousel />
+
       {/* <ProductIcon /> */}
 
-      <Text style={styles.topTitle}>Recommended Products</Text>
+      <Text style={styles.topTitle}>Products near you</Text>
 
       <ScrollView>
-        <ProductItem />
-        <ProductItem />
+        {products.map((product) => (
+          <ProductItem
+            key={product.id}
+            product={product}
+            navigation={navigation}
+          />
+        ))}
       </ScrollView>
 
       <Text>HomeScreen</Text>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -33,9 +43,11 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 26,
     padding: 15,
+    fontWeight: "bold",
   },
   topTitle: {
-    fontSize: 28,
-    marginLeft: 10,
+    fontSize: 26,
+
+    padding: 15,
   },
 });
