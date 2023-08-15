@@ -28,6 +28,7 @@ import HomeScreen from "../Screens/HomeScreen";
 import ProductInfo from "../Screens/ProductInfo";
 import Directions from "../Screens/Directions";
 import CartPage from "../Screens/CartPage";
+import QR_Screen from "../Screens/QR_Screen";
 
 const Tab = createBottomTabNavigator();
 
@@ -60,6 +61,10 @@ const ParentNavigator = () => {
             iconSource = focused
               ? require("../../assets/images/Cart.png")
               : require("../../assets/images/Cart.png");
+          } else if (route.name === "QR_Screen") {
+            iconSource = focused
+              ? require("../../assets/images/Cart.png")
+              : require("../../assets/images/Cart.png");
           }
 
           return (
@@ -81,7 +86,7 @@ const ParentNavigator = () => {
       <Tab.Screen name="Product" component={ProductInfo} />
       <Tab.Screen name="Directions" component={Directions} />
       <Tab.Screen name="CartPage" component={CartPage} />
-      <Tab.Screen name="Profile" component={HomeScreen} />
+      <Tab.Screen name="QR_Screen" component={QR_Screen} />
     </Tab.Navigator>
   );
 };
