@@ -25,7 +25,7 @@ import HomeScreen from "../Screens/HomeScreen";
 // import ExploreScreen from "../Screens/ExploreScreen";
 // import SportScreen from "../Screens/SportScreen";
 // import ProfileScreen from "../Screens/ProfileScreen";
-// import ProductScreen from "../Screens/ProductScreen";
+import ProductInfo from "../Screens/ProductInfo";
 
 const Tab = createBottomTabNavigator();
 
@@ -67,7 +67,7 @@ const ParentNavigator = () => {
                 style={{
                   width: 24,
                   height: 24,
-                  tintColor: focused ? "green" : "#8E8E93",
+                  tintColor: focused ? "black" : "#8E8E93",
                 }}
               />
             </View>
@@ -76,7 +76,7 @@ const ParentNavigator = () => {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Categories" component={HomeScreen} />
+      <Tab.Screen name="Categories" component={ProductInfo} />
       <Tab.Screen name="MyCart" component={HomeScreen} />
       <Tab.Screen name="ProductInfo" component={HomeScreen} />
       <Tab.Screen name="Profile" component={HomeScreen} />
