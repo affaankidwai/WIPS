@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, Dimensions } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useNavigation } from '@react-navigation/native';
+
+const { width, height } = Dimensions.get('window');
+const qrSize = Math.min(width, height) * 0.8; // Increase the size here
 
 export default function QrScreen() {
   const [hasPermission, setHasPermission] = useState(null);
@@ -17,7 +20,7 @@ export default function QrScreen() {
 
   const handleBarCodeScanned = () => {
     setScanning(false);
-    navigation.navigate('Product'); // Navigate to 'ProductInfo' screen
+    navigation.navigate('Product'); 
   };
 
   const toggleScanner = () => {
@@ -33,19 +36,25 @@ export default function QrScreen() {
 
   return (
     <View style={styles.container}>
-      {scanning ? (
-        <BarCodeScanner
-          onBarCodeScanned={scanning ? handleBarCodeScanned : undefined}
-          style={StyleSheet.absoluteFillObject}
-        />
-      ) : (
-        <View style={styles.messageContainer}>
-          <Text style={styles.messageText}>
-            {scanning ? 'Scanning...' : 'Tap the button to start scanning'}
-          </Text>
-          <Button title={scanning ? 'Stop Scanning' : 'Start Scanning'} onPress={toggleScanner} />
-        </View>
-      )}
+      <View style={styles.cameraContainer}>
+        {scanning && (
+          <BarCodeScanner
+            onBarCodeScanned={scanning ? handleBarCodeScanned : undefined}
+            style={StyleSheet.absoluteFillObject}
+          />
+        )}
+        {scanning && (
+          <View style={styles.overlay}>
+            <View style={styles.corner} />
+          </View>
+        )}
+      </View>
+      <View style={styles.messageContainer}>
+        <Text style={styles.messageText}>
+          {scanning ? 'Scanning...' : 'Tap the button to start scanning'}
+        </Text>
+        <Button title={scanning ? 'Stop Scanning' : 'Start Scanning'} onPress={toggleScanner} />
+      </View>
     </View>
   );
 }
@@ -55,6 +64,23 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
+    backgroundColor: '#f1f1f1',
+  },
+  cameraContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  corner: {
+    width: 300,
+    height: 300,
+    borderColor: 'white',
+    borderWidth: 2,
   },
   messageContainer: {
     alignItems: 'center',
@@ -62,7 +88,9 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   messageText: {
-    marginBottom: 20,
+    marginBottom: 50,
     textAlign: 'center',
+    color: 'black',
+    fontSize: 20,
   },
 });
