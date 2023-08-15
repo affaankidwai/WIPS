@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-
+import { Feather } from "@expo/vector-icons";
 const SearchBar = () => {
   return (
     <View style={styles.searchBarContainer}>
@@ -11,6 +11,7 @@ const SearchBar = () => {
         placeholder="  Search Products"
         placeholderTextColor="#27374D"
       />
+      <Feather name="mic" size={24} color="#1E4BA3" />
     </View>
   );
 };

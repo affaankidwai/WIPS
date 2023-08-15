@@ -18,7 +18,7 @@ const ProductCarousel = () => {
       category: "Sports",
       description: "High-quality wooden cricket bat for professionals.",
       imageUrl:
-        "https://www.google.com/imgres?imgurl=http%3A%2F%2F5.imimg.com%2Fdata5%2FHF%2FMN%2FMY-25380737%2Fsignature-bat-500x500.jpg&tbnid=V1IcgEFJ1RvegM&vet=12ahUKEwiVyMb-yt6AAxX06DgGHROdDvAQMygEegQIARBs..i&imgrefurl=https%3A%2F%2Fwww.indiamart.com%2Fproddetail%2Fsignature-bat-16002374248.html&docid=JuwbZ846XgmsuM&w=400&h=400&q=cricket%20bat%20small%20iamge&hl=en&ved=2ahUKEwiVyMb-yt6AAxX06DgGHROdDvAQMygEegQIARBs",
+        "https://images-eu.ssl-images-amazon.com/images/I/51PPeSwpnjL._AC_UL210_SR210,210_.jpg",
     },
     {
       id: 2,
@@ -56,7 +56,7 @@ const ProductCarousel = () => {
       data={products}
       renderItem={renderItem}
       sliderWidth={Dimensions.get("window").width}
-      itemWidth={Dimensions.get("window").width - 160}
+      itemWidth={Dimensions.get("window").width - 120}
       activeSlideAlignment="center"
       inactiveSlideScale={0.9}
       inactiveSlideOpacity={0.7}
@@ -69,14 +69,15 @@ const styles = StyleSheet.create({
   slide: {
     backgroundColor: "#AACB73",
     borderRadius: 15,
-    height: 300,
+    height: 260,
     padding: 15,
     marginLeft: 15,
     marginRight: 15,
+    marginBottom: 20,
     shadowColor: "#000",
     shadowOffset: {
-      width: 0,
-      height: 5,
+      width: 10,
+      height: 15,
     },
     shadowOpacity: 0.34,
     shadowRadius: 6.27,

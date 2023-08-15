@@ -28,8 +28,6 @@ const HomeScreen = ({ navigation }) => {
           />
         ))}
       </ScrollView>
-
-      <Text>HomeScreen</Text>
     </ScrollView>
   );
 };
@@ -44,6 +42,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     padding: 15,
     fontWeight: "bold",
+    marginBottom: 10,
   },
   topTitle: {
     fontSize: 26,
