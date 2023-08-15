@@ -267,6 +267,31 @@ const ProductInfo = ({ route, navigation }) => {
               textTransform: "uppercase",
             }}
           >
+            <Text>Add to Cart</Text>
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => (product.isAvailable ? addToCart(product.id) : null)}
+          style={{
+            width: "86%",
+            height: "90%",
+            backgroundColor: "#F7E987",
+            borderRadius: 20,
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: 40,
+            margin: 10,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 14,
+              fontWeight: "800",
+              letterSpacing: 1,
+              color: "black",
+              textTransform: "uppercase",
+            }}
+          >
             <Text>View Directions</Text>
           </Text>
         </TouchableOpacity>

@@ -26,6 +26,8 @@ import HomeScreen from "../Screens/HomeScreen";
 // import SportScreen from "../Screens/SportScreen";
 // import ProfileScreen from "../Screens/ProfileScreen";
 import ProductInfo from "../Screens/ProductInfo";
+import Directions from "../Screens/Directions";
+import CartPage from "../Screens/CartPage";
 
 const Tab = createBottomTabNavigator();
 
@@ -46,15 +48,15 @@ const ParentNavigator = () => {
             iconSource = focused
               ? require("../../assets/images/Cart.png")
               : require("../../assets/images/Cart.png");
-          } else if (route.name === "Categories") {
+          } else if (route.name === "Product") {
             iconSource = focused
               ? require("../../assets/images/Cart.png")
               : require("../../assets/images/Cart.png");
-          } else if (route.name === "Home") {
+          } else if (route.name === "Directions") {
             iconSource = focused
               ? require("../../assets/images/Cart.png")
               : require("../../assets/images/Cart.png");
-          } else if (route.name === "Profile") {
+          } else if (route.name === "CartPage") {
             iconSource = focused
               ? require("../../assets/images/Cart.png")
               : require("../../assets/images/Cart.png");
@@ -76,9 +78,9 @@ const ParentNavigator = () => {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Categories" component={ProductInfo} />
-      <Tab.Screen name="MyCart" component={HomeScreen} />
-      <Tab.Screen name="ProductInfo" component={HomeScreen} />
+      <Tab.Screen name="Product" component={ProductInfo} />
+      <Tab.Screen name="Directions" component={Directions} />
+      <Tab.Screen name="CartPage" component={CartPage} />
       <Tab.Screen name="Profile" component={HomeScreen} />
     </Tab.Navigator>
   );
