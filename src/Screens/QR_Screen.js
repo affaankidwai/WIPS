@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import { useNavigation } from '@react-navigation/native';
 
-export default function App() {
+export default function QrScreen() {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanning, setScanning] = useState(false);
-  const [scannedData, setScannedData] = useState(null);
+  const navigation = useNavigation(); // Get the navigation object
 
   useEffect(() => {
     (async () => {
@@ -14,15 +15,12 @@ export default function App() {
     })();
   }, []);
 
-  const handleBarCodeScanned = ({ type, data }) => {
+  const handleBarCodeScanned = () => {
     setScanning(false);
-    setScannedData(data);
+    navigation.navigate('Product'); // Navigate to 'ProductInfo' screen
   };
 
   const toggleScanner = () => {
-    if (!scanning) {
-      setScannedData(null);
-    }
     setScanning(!scanning);
   };
 
@@ -43,9 +41,7 @@ export default function App() {
       ) : (
         <View style={styles.messageContainer}>
           <Text style={styles.messageText}>
-            {scannedData
-              ? `Scanned Data: ${scannedData}`
-              : 'Tap the button to start scanning'}
+            {scanning ? 'Scanning...' : 'Tap the button to start scanning'}
           </Text>
           <Button title={scanning ? 'Stop Scanning' : 'Start Scanning'} onPress={toggleScanner} />
         </View>
