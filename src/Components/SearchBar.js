@@ -2,7 +2,11 @@ import React from "react";
 import { View, TextInput, StyleSheet, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+
 const SearchBar = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.searchBarContainer}>
       <AntDesign name="search1" size={20} color="#1E4BA3" />
@@ -11,7 +15,7 @@ const SearchBar = () => {
         placeholder="  Search Products"
         placeholderTextColor="#27374D"
       />
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Mic")}>
         <Feather name="mic" size={24} color="#1E4BA3" />
       </TouchableOpacity>
     </View>
