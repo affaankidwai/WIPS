@@ -41,30 +41,30 @@ const ParentNavigator = () => {
           let iconSource;
 
           // Your existing code for tab bar icons
-          if (route.name === "MyCart") {
+          if (route.name === "Home") {
             iconSource = focused
               ? require("../../assets/images/Home.png")
               : require("../../assets/images/Home.png");
-          } else if (route.name === "ProductInfo") {
+          } else if (route.name === "Home") {
             iconSource = focused
-              ? require("../../assets/images/Cart.png")
-              : require("../../assets/images/Cart.png");
+              ? require("../../assets/images/info.png")
+              : require("../../assets/images/info.png");
           } else if (route.name === "Product") {
             iconSource = focused
-              ? require("../../assets/images/Cart.png")
-              : require("../../assets/images/Cart.png");
+              ? require("../../assets/images/info.png")
+              : require("../../assets/images/info.png");
           } else if (route.name === "Directions") {
             iconSource = focused
-              ? require("../../assets/images/Cart.png")
-              : require("../../assets/images/Cart.png");
+              ? require("../../assets/images/dir.png")
+              : require("../../assets/images/dir.png");
           } else if (route.name === "CartPage") {
             iconSource = focused
               ? require("../../assets/images/Cart.png")
               : require("../../assets/images/Cart.png");
           } else if (route.name === "QR_Screen") {
             iconSource = focused
-              ? require("../../assets/images/Cart.png")
-              : require("../../assets/images/Cart.png");
+              ? require("../../assets/images/qr.png")
+              : require("../../assets/images/qr.png");
           }
 
           return (
@@ -74,7 +74,7 @@ const ParentNavigator = () => {
                 style={{
                   width: 24,
                   height: 24,
-                  tintColor: focused ? "black" : "#8E8E93",
+                  tintColor: focused ? "green" : "#8E8E93",
                 }}
               />
             </View>

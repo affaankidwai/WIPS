@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TextInput, StyleSheet } from "react-native";
+import { View, TextInput, StyleSheet, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 const SearchBar = () => {
@@ -11,7 +11,9 @@ const SearchBar = () => {
         placeholder="  Search Products"
         placeholderTextColor="#27374D"
       />
-      <Feather name="mic" size={24} color="#1E4BA3" />
+      <TouchableOpacity>
+        <Feather name="mic" size={24} color="#1E4BA3" />
+      </TouchableOpacity>
     </View>
   );
 };
