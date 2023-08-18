@@ -56,8 +56,8 @@ const products = [
   {
     id: "1",
     title: "Mixer Grinder",
-    delivery: "Free Delivery",
-    deliveryDate: "By 20th August",
+    delivery: "Available",
+    deliveryDate: "",
     discount: "50% off",
     price: "₹ 2,999",
     imagePath: require("../../assets/images/mixer.jpeg"),
@@ -65,8 +65,8 @@ const products = [
   {
     id: "2",
     title: "Dove Shampoo",
-    delivery: "Free Delivery",
-    deliveryDate: "By 22nd August",
+    delivery: "Available",
+    deliveryDate: "",
     discount: "40% off",
     price: "₹ 899",
     imagePath: require("../../assets/images/shampoo.jpeg"),
@@ -74,8 +74,8 @@ const products = [
   {
     id: "3",
     title: "Tennis Racket",
-    delivery: "Free Delivery",
-    deliveryDate: "By 24th August",
+    delivery: "Available",
+    deliveryDate: "",
     discount: "30% off",
     price: "₹ 1,299",
     imagePath: require("../../assets/images/3.jpeg"),

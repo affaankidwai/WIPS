@@ -22,11 +22,12 @@ const ProductCarousel = () => {
     },
     {
       id: 2,
-      title: "Tennis Racket",
-      price: "₹2,999",
-      category: "Sports",
+      title: "STARS GIFT TAPE ",
+      price: "₹999",
+      category: "Utility",
       description: "Lightweight tennis racket for beginners.",
-      imageUrl: "https://via.placeholder.com/300x200",
+      imageUrl:
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.in%2FMisamo-Enterprise-Transparent-Washable-Decorations%2Fdp%2FB0B2F2LHHL&psig=AOvVaw3Uiu6cJAGgiioNBL9aLTIV&ust=1692372320341000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNib0qmA5IADFQAAAAAdAAAAABBs",
     },
     {
       id: 3,

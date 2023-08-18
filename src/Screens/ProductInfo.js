@@ -248,7 +248,7 @@ const ProductInfo = ({ route, navigation }) => {
         }}
       >
         <TouchableOpacity
-          onPress={() => (product.isAvailable ? addToCart(product.id) : null)}
+          onPress={() => navigation.navigate("CartPage")}
           style={{
             width: "86%",
             height: "90%",
@@ -270,7 +270,7 @@ const ProductInfo = ({ route, navigation }) => {
             <Text>Add to Cart</Text>
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => (product.isAvailable ? addToCart(product.id) : null)}
           style={{
             width: "86%",
@@ -294,7 +294,7 @@ const ProductInfo = ({ route, navigation }) => {
           >
             <Text>View Directions</Text>
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     </View>
   );

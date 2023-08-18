@@ -1,5 +1,6 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text } from "react-native";
+import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import ProductItem from "../Components/ProductCard";
 
 const pastaIngredients = [
@@ -39,40 +40,43 @@ const pastaIngredients = [
     price: "₹ 129",
     imagePath: require("../../assets/images/tomato.png"),
   },
-  {
-    id: "5",
-    title: "Basil",
-    delivery: "Free Delivery",
-    deliveryDate: "By 28th August",
-    discount: "40% off",
-    price: "₹ 159",
-    imagePath: require("../../assets/images/basil.png"),
-  },
-  {
-    id: "6",
-    title: "Parmesan",
-    delivery: "Free Delivery",
-    deliveryDate: "By 20th August",
-    discount: "40% off",
-    price: "₹ 199",
-    imagePath: require("../../assets/images/shampoo.jpeg"),
-  },
-
-  // ... add more ingredients as needed
+  //   {
+  //     id: "5",
+  //     title: "Basil",
+  //     delivery: "Free Delivery",
+  //     deliveryDate: "By 28th August",
+  //     discount: "40% off",
+  //     price: "₹ 159",
+  //     imagePath: require("../../assets/images/basil.png"),
+  //   },
+  //   {
+  //     id: "6",
+  //     title: "Parmesan",
+  //     delivery: "Free Delivery",
+  //     deliveryDate: "By 20th August",
+  //     discount: "40% off",
+  //     price: "₹ 199",
+  //     imagePath: require("../../assets/images/shampoo.jpeg"),
+  //   },
 ];
 
-const IngredientScreen = ({ navigation }) => {
+const IngredientScreen = () => {
+  const navigation = useNavigation();
+
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.heading}>Pasta Ingredients</Text>
 
       {pastaIngredients.map((ingredient) => (
-        <ProductItem
-          key={ingredient.id}
-          product={ingredient}
-          navigation={navigation}
-        />
+        <ProductItem key={ingredient.id} product={ingredient} />
       ))}
+
+      <TouchableOpacity
+        style={styles.homeButton}
+        onPress={() => navigation.navigate("Home")}
+      >
+        <Text style={styles.homeButtonText}>Go to Home</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
@@ -80,6 +84,7 @@ const IngredientScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 60,
+    paddingBottom: 20,
   },
   heading: {
     fontSize: 26,
@@ -98,6 +103,19 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
     elevation: 4,
+  },
+  homeButton: {
+    backgroundColor: "#EBE76C",
+    padding: 15,
+    borderRadius: 10,
+    marginHorizontal: 15,
+    alignItems: "center",
+    marginTop: 20,
+  },
+  homeButtonText: {
+    color: "black",
+    fontWeight: "bold",
+    fontSize: 16,
   },
 });
 
